@@ -7,23 +7,19 @@ A simple api wrapper for the static file traefik configuration, to dynamically a
 
 # Run
 
-Get the latest container from docker pull cspecht/traefik-static-file-api:latest, setup with with following environment variables:
+Get the latest container from docker pull cspecht/clean-traefik-routes:latest, setup with with following environment variables:
 
-API_PORT default: "8080"
-FILENAME default: "services.yml"
-ROUTER default: "http"
-DOMAIN default: ".example.com"
-SERVICE default: "svc@docker"
-CERT_RESOLVER default: "le"
-ENTRY_POINT default: "websecure"
-Simple execute a post command to localhost:8080as a json including 'subdomain' key, e.g.
+- FILENAME default: "services.yml"
+- INTERVAL default: "* * * * *"
+- PERIOD default: "MONTHLY"
+- TICKS default: "[3,9]"
+- DB_HOST default: "localhost"
+- DB_PORT default: "5432"
+- DB_USERNAME default: "postgres"
+- DB_NAME default: "postgres"
+- DB_PW default: "postgres"
+- DB_TABLE default: "principles" 
 
-{"subdomain":"john"}
-
-Hints
-
-If using traefik inside a docker, always mount a folder including the config files into the container when using the watch functionality, otherwise no changes are detected
-There is no security mechanism for this service, so dont expose this service!
 # License
 
 - under [MIT license](http://opensource.org/licenses/mit-license.php)
