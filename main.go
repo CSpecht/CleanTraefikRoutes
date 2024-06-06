@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"slices"
 	"strconv"
@@ -34,7 +35,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
+	log.Println("started service with interval ", interval, " on ", period, " watching [file, table]: ", filename, db_tablename)
 	c := cron.New()
 	c.AddFunc(interval, func() { execFunctions(filename, db_tablename, dsn, t, period) })
 	c.Start()
