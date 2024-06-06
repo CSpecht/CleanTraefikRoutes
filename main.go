@@ -30,7 +30,6 @@ func main() {
 		db_name,
 		db_pw)
 
-	//umstellen auf wochentag / monat
 	t, err := parseIntSlice(ticks)
 	if err != nil {
 		panic(err)
